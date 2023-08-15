@@ -1,0 +1,155 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100vh;
+  background-image: url(/img/lovepik-gold-and-black-decoration-background-png-image_400322684_wh1200.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.box {
+  width: 380px;
+  height: 420px;
+  /* border-radius: 8px; */
+  border-radius: 0px 50px 0px 50px;
+  background-color: #1c1c1c1c;
+  position: relative;
+
+  overflow: hidden;
+}
+.box::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 380px;
+  height: 420px;
+  background: linear-gradient(0deg, transparent, red, red);
+  transform-origin: bottom right;
+  animation: animate 6s linear infinite;
+}
+.box::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 380px;
+  height: 420px;
+  background: linear-gradient(0deg, transparent, #45f3ff, #45f3ff);
+  transform-origin: bottom right;
+  animation: animate 6s linear infinite;
+  animation-delay: -3s;
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.form {
+  position: absolute;
+  inset: 2px;
+  /* border-radius: 8px; */
+  border-radius: 0px 50px 0px 50px;
+  background-color: #28292d;
+  z-index: 10;
+
+  display: flex;
+  flex-direction: column;
+  padding: 50px 40px;
+}
+.form h2 {
+  color: #45f3ff;
+  text-align: center;
+  font-weight: 500;
+}
+.inputbox {
+  position: relative;
+  width: 300px;
+  margin-top: 35px;
+}
+.inputbox input {
+  position: relative;
+  width: 100%;
+  padding: 20px 10px 10px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: #23242a;
+  font-size: 16px;
+  letter-spacing: 1px;
+  z-index: 10;
+}
+.inputbox span {
+  position: absolute;
+  left: 0;
+  padding: 20px 0px 10px;
+  color: #8f8f8f;
+  font-size: 18px;
+  letter-spacing: 0.5px;
+  pointer-events: none;
+  transition: 0.5s;
+}
+.inputbox input:valid ~ span,
+.inputbox input:focus ~ span {
+  color: #45f3ff;
+  transform: translateY(-38px);
+  font-size: 15px;
+}
+.inputbox i {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #45f3ff;
+  border-radius: 4px;
+  pointer-events: none;
+  transform: 0.5s;
+  z-index: 9;
+}
+.inputbox input:valid ~ i,
+.inputbox input:focus ~ i {
+  height: 44px;
+}
+.links {
+  display: flex;
+  justify-content: space-between;
+}
+.links a {
+  margin: 10px 0;
+  color: #8f8f8f;
+  text-decoration: none;
+  font-size: 15px;
+}
+.links a:hover,
+.links a:nth-child(2) {
+  color: #45f3ff;
+}
+input[type="submit"] {
+  border: none;
+  outline: none;
+  background-color: #45f3ff;
+  padding: 11px 25px;
+  width: 100px;
+  font-weight: 600;
+  font-size: 17px;
+  font-family: "Times New Roman", Times, serif;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-top: 10px;
+}
+input[type="submit"]:active {
+  opacity: 0.8;
+}
